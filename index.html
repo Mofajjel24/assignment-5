@@ -1,9 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Emergency Service</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body
+    class="bg-gradient-to-br from-green-100 via-white to-green-50 text-gray-800"
+  >
+    <!-- HEADER -->
+    <header class="bg-white border-b shadow-sm sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            src="./assets/logo-dark.png"
+            alt="Logo"
+            class="w-9 h-9 rounded"
+          />
+          <span class="font-semibold text-lg">Emergency Service</span>
+        </div>
+
+        <div class="flex items-center gap-4 text-sm">
+          <div class="flex items-center gap-1">
+            <img src="./assets/heart.png" class="w-4 h-4" />
+            <span id="heartCount">0</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img src="./assets/coin.png" class="w-4 h-4" />
+            <span id="coinCount">100</span>
+          </div>
+          <div class="flex items-center gap-1">
+            📋 <span id="copyCount">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      class="bg-gradient-to-r from-green-800 to-green-600 text-white py-10 shadow"
+    >
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <img
+          src="./assets/logo-dark.png"
+          alt="Logo"
+          class="w-20 mx-auto mb-4"
+        />
+        <h1 class="text-3xl font-bold mb-1">জরুরি সেবা ডিরেক্টরি</h1>
+        <p class="text-sm opacity-90">
+          Government Emergency Services at Your Fingertip – A Project by
+          Government of the People's Republic of Bangladesh
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-3 gap-6"
+    >
+      <!-- SERVICES -->
+      <section
+        id="cardSection"
+        class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- JS Injected Cards -->
+      </section>
+
+      <!-- HISTORY -->
+      <aside class="bg-white rounded-xl shadow-md border p-4">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-semibold flex items-center gap-2">📜 Call History</h2>
+          <button
+            id="clearHistoryBtn"
+            class="text-sm text-red-600 border px-2 py-1 rounded hover:bg-red-50"
+          >
+            Clear
+          </button>
+        </div>
+        <ul
+          id="historyList"
+          class="space-y-3 text-sm text-gray-700 max-h-[500px] overflow-auto"
+        >
+          <li id="emptyHistory" class="text-gray-400">No calls made yet</li>
+        </ul>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
